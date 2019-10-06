@@ -1,44 +1,32 @@
-.homebutton{
-	background-color: orange;
+*{
+	margin: 0;
+}
+
+
+header{
+	width: 100%;
+	height: 5vw;
+	background-color: #5F5F5F
+}
+
+
+li{
+	display: inline;
+	margin-left: 1vw;
+	position: relative;
+	top: 1vw;
+}
+
+a{
+	color: white;
 	text-decoration: none;
-	color: black;
-	width: 10%;
-	float: right;
-	text-align: center;
-	border-radius: 1vw;
+	font-size: 150%;
 }
 
-.allusers{
+.homebutton{
+	color: white;
 	float: right;
 	position: relative;
-	left: 10vw;
-	box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
-}
-
-.tablename{
-	margin-bottom: 1vw;
-}
-
-.greeting{
-	width: 40%;
-	position: relative;
-	top: 5vw;
-	background-color: orange;
-	border-radius: 10px 200px 10px 200px;
-	text-align: center;
-}
-
-.connecthead{
-	position: relative;
-	bottom: 5vw;
-	right: 15vw;
-	float: right;
-}
-
-
-.freunde{
-	background-color: orange;
-	border-radius: 10px 50px 10px 50px;
-	width: 20%;
-	height: 20vw;
+	bottom: 1.25vw;
+	right: 1vw;
 }

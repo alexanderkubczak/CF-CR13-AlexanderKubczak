@@ -13,7 +13,13 @@ if (isset($_SESSION['user'])=="") {
 <!DOCTYPE html>
 <html>
 <head>
-<title>Friends!</title>
+<title>Party Organizer</title>
+
+<body>
+
+
+
+
 
 
 <?php include 'components/header.php';?>
@@ -24,23 +30,29 @@ $currentuser = $_SESSION['user'];
 $sql = "SELECT * FROM users where user_id = $currentuser";
 $result = $connect->query($sql);
 $row = $result->fetch_assoc();
-echo '<a class="homebutton" type="button" href="logout.php?logout">Log out</a>
-  <h2 class="greeting"> Hello ' .$row["user_name"]. '! <br> Welcome to P E O P L E!</h2>';
+echo '<h2 class="greeting"> Hello ' .$row["user_name"]. '! <br> Welcome to Viennas Event Organizer</h2>';
 	?>
 
  
 
+	
 
-<?php include 'components/showallusers.php'; ?>
-<br>
-<br>
-<br>
-<br>
-<h2> This is your friendslist! </h2>
-<?php include 'components/friendships.php'; ?>
+            <?php if($userRow['role' ]==1){ ?>
+          <h1 class="welcome">Your role is user </h1>
+          <?php include 'components/showclubs.php'; ?>
+          <?php include 'components/showallusers.php'; ?>
+          <?php include 'components/showartist.php'; ?>
+		  <?php }
+     	  else{ ?>
+     	  	<h1 class="welcome">Your role is admin </h1>
+     	  	<a href= "adddata.php"><button class="add" type="button">Add Event</button></a>
+     	  	          <?php include 'components/a_showallusers.php'; ?>
+                    <?php include 'components/showartist.php'; ?>
+                              <?php include 'components/showclubs.php'; ?>
 
+	
 
-
+     	 <?php } ?>
 
 <?php
 $connect->close();

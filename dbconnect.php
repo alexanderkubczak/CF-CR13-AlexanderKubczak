@@ -6,7 +6,7 @@ error_reporting( ~E_DEPRECATED & ~E_NOTICE );
 define ('DBHOST', 'localhost');
 define('DBUSER' , 'root');
 define('DBPASS', '');
-define ('DBNAME', 'cr13_alexander_kubczak_people');
+define ('DBNAME', 'cr12_alexanderkubczak_travelmatic');
 
 $connect = mysqli_connect(DBHOST,DBUSER,DBPASS,DBNAME);
 

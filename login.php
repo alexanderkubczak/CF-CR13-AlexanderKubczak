@@ -49,11 +49,14 @@ $passError = "Please enter your password." ;
 ?>
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
   <body class="regloginbody text-white">
-    <?php include 'components/header.php';?>
     <div class="reglogbox">
       <form method="post"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete= "off">
-        <h2>Welcome to Friends! Join the community today</h2 >
+        <h2>Find Events in Vienna!</h2 >
         <hr/>             
         <?php if (isset($errMSG)) {
         echo  $errMSG;}

@@ -1,5 +1,5 @@
 <?php
-$sql = "SELECT name, eventdate, genre FROM events";
+$sql = "SELECT eventID, name, eventdate, genre FROM events";
 $result = $connect->query($sql);
 if ($result->num_rows > 0) {    
   echo "
@@ -7,6 +7,7 @@ if ($result->num_rows > 0) {
 	  <table class='allevents'>
 	  <thead>
 	    <tr>
+	      <th>ID</th>
 	      <th>Name</th>
 	      <th>Date</th>
 	      <th>Genre</th>
@@ -19,12 +20,8 @@ while($row = $result->fetch_assoc()) {
 			<td class="tablename">' .$row["name"]. '</td>
 			<td class="tabledate">' .$row["eventdate"]. '</td>
 			<td class="tablegenre">' .$row["genre"]. '</td>
-			<td><form action="editevent.php" method="GET">
-					  <input type="hidden" name="eventID" value="' .$row["eventID"]. '"/>
-					  <button type="submit" class="btn btn-primary">Edit event
-					  </button>
-				</form>
-										
+			
+									</td>		
 	    </tr>';
     
   }  
